@@ -1380,6 +1380,30 @@ nav a.active:hover {
         </div>
     </section>
 
+    </script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your user ID
+  (function () {
+    emailjs.init("pJgu9vMGgNrpqKaIS"); // e.g., emailjs.init("k03z1x12abcDEF");
+  })();
+</script>
+
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm("hetvi_gohil", "template_s8lm5k9", this)
+      .then(() => {
+        alert("Message sent successfully!");
+        this.reset(); // Optional: reset the form
+      }, (error) => {
+        alert("❌ Failed to send message. Try again!");
+        console.error(error);
+      });
+  });
+</script>
+
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
