@@ -641,9 +641,10 @@ nav a.active:hover {
         }
 
         .about-image {
-            width: 500px;
-            height: 600px;
-            background: url("MyImage.jpeg") no-repeat center center/contain;
+            width: 350px;
+            height: 350px;
+            background: url("MyImage.jpeg") no-repeat center center/cover;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -652,6 +653,15 @@ nav a.active:hover {
             color: var(--white);
             margin: 0 auto;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* The color overlay */
+        .about-image::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.30); /* Change color + opacity */
+            pointer-events: none; /* click passes through */
         }
 
         .about-text {
